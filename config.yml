@@ -1,0 +1,19 @@
+language: zh
+pipeline:
+- name: SpacyNLP
+- name: SpacyTokenizer
+- name: SpacyFeaturizer
+- name: RegexFeaturizer
+- name: SpacyEntityExtractor
+- name: CRFEntityExtractor
+- name: EntitySynonymMapper
+- name: SklearnIntentClassifier
+policies:
+- name: KerasPolicy
+  featurizer:
+  - name: MaxHistoryTrackerFeaturizer
+    max_history: 5
+    state_featurizer:
+    - name: BinarySingleStateFeaturizer
+- name: MemoizationPolicy
+  max_history: 5

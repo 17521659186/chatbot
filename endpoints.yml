@@ -1,0 +1,14 @@
+action_endpoint:
+  url: http://localhost:5055/webhook
+tracker_store:
+  type: redis
+  url: 127.0.0.1
+  port: 6379
+  password: '123456'
+  db: 13
+lock_store:
+  type: redis
+  url: 127.0.0.1
+  port: 6379
+  password: '123456'
+  db: 15
